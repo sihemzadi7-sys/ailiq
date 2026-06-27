@@ -1,7 +1,8 @@
 import type { MetadataRoute } from 'next'
 
+const baseUrl = 'https://www.ailiq.xyz'
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.ailiq.xyz'
   const currentDate = new Date()
 
   return [
