@@ -1,12 +1,22 @@
 import type { Metadata } from 'next'
 import { Mail, MessageSquare, Clock } from 'lucide-react'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { ContactForm } from './contact-form'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Textarea } from '@/components/ui/textarea'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 
 export const metadata: Metadata = {
   title: 'Contact Us | AILIQ',
-  description: 'Get in touch with AILIQ for questions, partnerships, feedback, or tool submissions.',
+  description:
+    'Get in touch with AILIQ. Questions about AI tools, partnerships, or feedback.',
 }
 
 const contactMethods = [
@@ -19,7 +29,7 @@ const contactMethods = [
   {
     icon: MessageSquare,
     title: 'Live Chat',
-    description: 'Chat support',
+    description: 'Chat with our support team',
     value: 'Not available yet',
   },
   {
@@ -49,9 +59,15 @@ export default function ContactPage() {
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
                 <method.icon className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="mt-4 font-semibold text-foreground">{method.title}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{method.description}</p>
-              <p className="mt-2 font-medium text-foreground">{method.value}</p>
+              <h3 className="mt-4 font-semibold text-foreground">
+                {method.title}
+              </h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {method.description}
+              </p>
+              <p className="mt-2 font-medium text-foreground">
+                {method.value}
+              </p>
             </CardContent>
           </Card>
         ))}
@@ -63,7 +79,64 @@ export default function ContactPage() {
             <CardTitle>Send us a message</CardTitle>
           </CardHeader>
           <CardContent>
-            <ContactForm />
+            {/* مبدئيًا الفورم بدون منطق إرسال حقيقي */}
+            <form className="space-y-6">
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="space-y-2">
+                  <Label htmlFor="firstName">First name</Label>
+                  <Input id="firstName" placeholder="John" />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="lastName">Last name</Label>
+                  <Input id="lastName" placeholder="Doe" />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="email">Email</Label>
+                <Input id="email" type="email" placeholder="john@example.com" />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="subject">Subject</Label>
+                <Select>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select a topic" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="General Inquiry">
+                      General Inquiry
+                    </SelectItem>
+                    <SelectItem value="Feedback">Feedback</SelectItem>
+                    <SelectItem value="Submit an AI Tool">
+                      Submit an AI Tool
+                    </SelectItem>
+                    <SelectItem value="Partnership Opportunity">
+                      Partnership Opportunity
+                    </SelectItem>
+                    <SelectItem value="Advertising">Advertising</SelectItem>
+                    <SelectItem value="Report a Bug">Report a Bug</SelectItem>
+                    <SelectItem value="Other">Other</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="message">Message</Label>
+                <Textarea
+                  id="message"
+                  placeholder="Tell us how we can help..."
+                  rows={5}
+                />
+              </div>
+
+              <Button
+                type="submit"
+                className="w-full bg-primary hover:bg-primary/90"
+              >
+                Send Message
+              </Button>
+            </form>
           </CardContent>
         </Card>
 
@@ -74,8 +147,9 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Have you developed an AI tool that you&apos;d like featured on AILIQ?
-                We&apos;re always looking for innovative tools to add to our directory.
+                Have you developed an AI tool that you&apos;d like featured on
+                AILIQ? We&apos;re always looking for innovative tools to add to
+                our directory.
               </p>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li>- Free submission for quality tools</li>
@@ -92,8 +166,8 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Interested in advertising, sponsorship, or partnership opportunities?
-                We offer multiple ways to promote your AI tool to our audience.
+                Interested in advertising, sponsorship, or partnership
+                opportunities? We offer various ways to promote your AI tool.
               </p>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li>- Sponsored listings</li>
@@ -110,12 +184,18 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Follow AILIQ and stay updated with the latest AI tools and reviews.
+                Join our growing community of AI enthusiasts and professionals.
               </p>
               <div className="mt-4 flex gap-4">
-                <Button variant="outline" size="sm">X</Button>
-                <Button variant="outline" size="sm">Facebook</Button>
-                <Button variant="outline" size="sm">Newsletter</Button>
+                <Button variant="outline" size="sm">
+                  X
+                </Button>
+                <Button variant="outline" size="sm">
+                  Facebook
+                </Button>
+                <Button variant="outline" size="sm">
+                  Newsletter
+                </Button>
               </div>
             </CardContent>
           </Card>
