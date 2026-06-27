@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Learn more about ailiq, our editorial approach, how we review AI tools, and how we keep our recommendations transparent.',
+    'Learn more about ailiq, our editorial approach, how we review AI tools, and how we help users discover official tool websites.',
 }
 
 export default function AboutPage() {
@@ -22,64 +22,77 @@ export default function AboutPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground">Who We Are</h2>
           <p className="mt-4 text-muted-foreground">
-            ailiq is an independent website focused on discovering, comparing, and explaining AI tools
-            for creators, marketers, developers, teams, and curious professionals.
+            ailiq is an independent website dedicated to discovering, organizing, and explaining AI tools
+            for creators, marketers, developers, students, teams, and curious professionals.
           </p>
           <p className="mt-4 text-muted-foreground">
-            Our goal is to help visitors understand what a tool does, who it is best for,
-            what its strengths and limitations are, and whether it is worth trying.
+            Our goal is to help visitors quickly understand what a tool does, who it is for, and where
+            to find the official website for more details.
           </p>
         </section>
 
         <section>
           <h2 className="text-xl font-semibold text-foreground">What We Publish</h2>
           <p className="mt-4 text-muted-foreground">
-            We publish curated tool listings, reviews, comparisons, and practical guides related to AI
-            writing, image generation, video creation, audio, productivity, coding, and automation.
+            We publish AI tool listings, reviews, comparisons, and practical guides covering writing,
+            image generation, video, audio, productivity, coding, and related categories.
+          </p>
+          <p className="mt-4 text-muted-foreground">
+            We aim to keep our content clear, useful, and easy to scan so users can compare tools faster
+            and make better-informed decisions.
           </p>
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold text-foreground">How We Review Tools</h2>
+          <h2 className="text-xl font-semibold text-foreground">How We Select and Review Tools</h2>
           <p className="mt-4 text-muted-foreground">
-            Our reviews and recommendations are based on research, hands-on evaluation when possible,
-            publicly available product information, feature analysis, pricing review, and comparison
-            against similar tools in the market.
+            Our content is based on research, public product information, feature comparison, category
+            analysis, pricing review, and direct evaluation when possible.
           </p>
           <p className="mt-4 text-muted-foreground">
-            Because AI products change quickly, features, pricing, and availability may change without
-            notice. We encourage users to verify important details on official provider websites before
-            making a purchase decision.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-semibold text-foreground">Affiliate Transparency</h2>
-          <p className="mt-4 text-muted-foreground">
-            Some pages on ailiq may contain affiliate links. This means we may earn a commission if you
-            click a link and make a purchase, at no extra cost to you.
-          </p>
-          <p className="mt-4 text-muted-foreground">
-            We aim to keep our content useful and transparent. You can read more on our{' '}
-            <Link href="/affiliate-disclosure" className="text-primary hover:underline">
-              Affiliate Disclosure
-            </Link>{' '}
-            page.
+            Because AI products evolve quickly, features, pricing, availability, and policies may change
+            over time. We encourage users to verify important information directly on the official tool
+            website before making any decision.
           </p>
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold text-foreground">Privacy and Contact</h2>
+          <h2 className="text-xl font-semibold text-foreground">Official Links</h2>
           <p className="mt-4 text-muted-foreground">
-            Like most modern websites, ailiq may use analytics, cookies, and third-party services to
-            understand usage, improve performance, and support site functionality.
+            Whenever possible, we link directly to the official website of the tool or service being
+            discussed. This helps users access the most accurate and up-to-date product information from
+            the original source.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-semibold text-foreground">Transparency</h2>
+          <p className="mt-4 text-muted-foreground">
+            We aim to present information clearly and honestly. We do not guarantee that every page is
+            always fully up to date, but we work to improve and refresh content when tools change.
           </p>
           <p className="mt-4 text-muted-foreground">
-            Read our{' '}
+            You can learn more about how we handle data and site usage in our{' '}
             <Link href="/privacy" className="text-primary hover:underline">
               Privacy Policy
             </Link>{' '}
-            or contact us at{' '}
+            and review our{' '}
+            <Link href="/terms" className="text-primary hover:underline">
+              Terms of Use
+            </Link>
+            .
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-semibold text-foreground">Contact</h2>
+          <p className="mt-4 text-muted-foreground">
+            If you have a correction, suggestion, partnership inquiry, or general question, you can reach
+            us through our{' '}
+            <Link href="/contact" className="text-primary hover:underline">
+              Contact
+            </Link>{' '}
+            page or by email at{' '}
             <a href="mailto:best4liker@gmail.com" className="text-primary hover:underline">
               best4liker@gmail.com
             </a>
