@@ -1,205 +1,84 @@
 import type { Metadata } from 'next'
-import { Mail, MessageSquare, Clock } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Textarea } from '@/components/ui/textarea'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
+import Link from 'next/link'
+import { Mail } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Contact Us | AILIQ',
+  title: 'Contact Us',
   description:
-    'Get in touch with AILIQ. Questions about AI tools, partnerships, or feedback.',
+    'Get in touch with ailiq for questions, corrections, feedback, or partnership inquiries.',
 }
-
-const contactMethods = [
-  {
-    icon: Mail,
-    title: 'Email',
-    description: 'Send us an email anytime',
-    value: 'best4liker@gmail.com',
-  },
-  {
-    icon: MessageSquare,
-    title: 'Live Chat',
-    description: 'Chat with our support team',
-    value: 'Not available yet',
-  },
-  {
-    icon: Clock,
-    title: 'Response Time',
-    description: 'We typically respond within',
-    value: '24-48 hours',
-  },
-]
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8 lg:py-16">
-      <div className="mb-12 text-center">
-        <h1 className="text-3xl font-bold text-foreground lg:text-4xl">
-          Contact Us
-        </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-          Have a question, feedback, or business inquiry? We&apos;d love to hear from you.
-        </p>
-      </div>
+    <div className="mx-auto max-w-4xl px-4 py-12 lg:px-8 lg:py-16">
+      <h1 className="mb-8 text-3xl font-bold text-foreground lg:text-4xl">
+        Contact Us
+      </h1>
 
-      <div className="mb-12 grid gap-6 sm:grid-cols-3">
-        {contactMethods.map((method) => (
-          <Card key={method.title}>
-            <CardContent className="flex flex-col items-center p-6 text-center">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                <method.icon className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="mt-4 font-semibold text-foreground">
-                {method.title}
-              </h3>
-              <p className="mt-1 text-sm text-muted-foreground">
-                {method.description}
+      <p className="mb-8 text-muted-foreground">
+        Last updated: June 27, 2026
+      </p>
+
+      <div className="space-y-8">
+        <section className="prose prose-neutral max-w-none">
+          <h2 className="text-xl font-semibold text-foreground">Get in Touch</h2>
+          <p className="mt-4 text-muted-foreground">
+            If you have a question, correction, feedback, business inquiry, or suggestion for a tool we
+            should review, you can contact us directly by email.
+          </p>
+          <p className="mt-4 text-muted-foreground">
+            We aim to keep ailiq useful, accurate, and easy to navigate, and we welcome helpful feedback
+            from users and tool makers.
+          </p>
+        </section>
+
+        <section className="rounded-xl border border-border bg-card p-6 shadow-sm">
+          <div className="flex items-start gap-4">
+            <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
+              <Mail className="h-5 w-5" />
+            </div>
+
+            <div className="min-w-0">
+              <h2 className="text-lg font-semibold text-foreground">Email</h2>
+              <p className="mt-2 text-sm text-muted-foreground">
+                For general questions, corrections, partnerships, or support:
               </p>
-              <p className="mt-2 font-medium text-foreground">
-                {method.value}
-              </p>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-
-      <div className="grid gap-12 lg:grid-cols-2">
-        <Card>
-          <CardHeader>
-            <CardTitle>Send us a message</CardTitle>
-          </CardHeader>
-          <CardContent>
-            {/* مبدئيًا الفورم بدون منطق إرسال حقيقي */}
-            <form className="space-y-6">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="space-y-2">
-                  <Label htmlFor="firstName">First name</Label>
-                  <Input id="firstName" placeholder="John" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="lastName">Last name</Label>
-                  <Input id="lastName" placeholder="Doe" />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="john@example.com" />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="subject">Subject</Label>
-                <Select>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select a topic" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="General Inquiry">
-                      General Inquiry
-                    </SelectItem>
-                    <SelectItem value="Feedback">Feedback</SelectItem>
-                    <SelectItem value="Submit an AI Tool">
-                      Submit an AI Tool
-                    </SelectItem>
-                    <SelectItem value="Partnership Opportunity">
-                      Partnership Opportunity
-                    </SelectItem>
-                    <SelectItem value="Advertising">Advertising</SelectItem>
-                    <SelectItem value="Report a Bug">Report a Bug</SelectItem>
-                    <SelectItem value="Other">Other</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="message">Message</Label>
-                <Textarea
-                  id="message"
-                  placeholder="Tell us how we can help..."
-                  rows={5}
-                />
-              </div>
-
-              <Button
-                type="submit"
-                className="w-full bg-primary hover:bg-primary/90"
+              <a
+                href="mailto:best4liker@gmail.com"
+                className="mt-3 inline-block text-base font-medium text-primary hover:underline"
               >
-                Send Message
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
+                best4liker@gmail.com
+              </a>
+            </div>
+          </div>
+        </section>
 
-        <div className="space-y-8">
-          <Card>
-            <CardHeader>
-              <CardTitle>Submit Your AI Tool</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                Have you developed an AI tool that you&apos;d like featured on
-                AILIQ? We&apos;re always looking for innovative tools to add to
-                our directory.
-              </p>
-              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-                <li>- Free submission for quality tools</li>
-                <li>- Thorough review process</li>
-                <li>- Detailed listing with pros and cons</li>
-                <li>- Optional sponsored placement available</li>
-              </ul>
-            </CardContent>
-          </Card>
+        <section className="prose prose-neutral max-w-none">
+          <h2 className="text-xl font-semibold text-foreground">Before You Contact Us</h2>
+          <p className="mt-4 text-muted-foreground">
+            If your question is about how we handle data, please review our{' '}
+            <Link href="/privacy" className="text-primary hover:underline">
+              Privacy Policy
+            </Link>
+            .
+          </p>
+          <p className="mt-4 text-muted-foreground">
+            If your question is about website rules, content usage, or general limitations, please read
+            our{' '}
+            <Link href="/terms" className="text-primary hover:underline">
+              Terms of Use
+            </Link>
+            .
+          </p>
+        </section>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Business Inquiries</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                Interested in advertising, sponsorship, or partnership
-                opportunities? We offer various ways to promote your AI tool.
-              </p>
-              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-                <li>- Sponsored listings</li>
-                <li>- Display advertising</li>
-                <li>- Content partnerships</li>
-                <li>- Affiliate programs</li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Community</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                Join our growing community of AI enthusiasts and professionals.
-              </p>
-              <div className="mt-4 flex gap-4">
-                <Button variant="outline" size="sm">
-                  X
-                </Button>
-                <Button variant="outline" size="sm">
-                  Facebook
-                </Button>
-                <Button variant="outline" size="sm">
-                  Newsletter
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+        <section className="rounded-xl border border-border bg-muted/30 p-6">
+          <h2 className="text-lg font-semibold text-foreground">Response Time</h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            We usually respond as soon as possible, but response times may vary depending on message
+            volume.
+          </p>
+        </section>
       </div>
     </div>
   )
