@@ -1,4 +1,13 @@
 User-agent: *
 Allow: /
+Allow: /_next/static/
+Allow: /_next/image/
 
-Sitemap: https://ailiq.xyz/sitemap.xml
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /private/
+Disallow: /_next/data/
+
+Host: https://www.ailiq.xyz
+Sitemap: https://www.ailiq.xyz/sitemap.xml
