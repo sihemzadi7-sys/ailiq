@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import {
   Accordion,
   AccordionContent,
@@ -157,12 +158,12 @@ export default function FAQPage() {
         <p className="mt-2 text-muted-foreground">
           If you need help, want to report a correction, or have a suggestion, contact us directly.
         </p>
-        <a
+        <Link
           href="/contact"
           className="mt-4 inline-block rounded-lg bg-primary px-6 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
         >
           Contact Us
-        </a>
+        </Link>
       </div>
     </div>
   )
