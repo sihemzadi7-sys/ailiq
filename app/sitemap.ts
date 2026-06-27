@@ -1,15 +1,12 @@
 import type { MetadataRoute } from 'next'
-import { getAllTools } from '@/lib/data/tools' // عدّل المسار حسب مكان الملف الحقيقي
-
-const baseUrl = 'https://www.ailiq.xyz'
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://www.ailiq.xyz'
   const currentDate = new Date()
-  const tools = getAllTools()
 
-  const staticRoutes: MetadataRoute.Sitemap = [
+  return [
     {
-      url: `${baseUrl}`,
+      url: baseUrl,
       lastModified: currentDate,
       changeFrequency: 'daily',
       priority: 1,
@@ -63,13 +60,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3,
     },
   ]
-
-  const toolRoutes: MetadataRoute.Sitemap = tools.map((tool) => ({
-    url: `${baseUrl}/tools/${tool.slug}`,
-    lastModified: tool.createdAt ? new Date(tool.createdAt) : currentDate,
-    changeFrequency: 'weekly',
-    priority: 0.7,
-  }))
-
-  return [...staticRoutes, ...toolRoutes]
 }
