@@ -28,7 +28,7 @@ const socialLinks = [
   { name: 'Twitter', href: 'https://twitter.com/', icon: Twitter },
   { name: 'GitHub', href: 'https://github.com/', icon: Github },
   { name: 'LinkedIn', href: 'https://www.linkedin.com/', icon: Linkedin },
-  { name: 'Email', href: 'mailto:hello@ailiq.xyz', icon: Mail },
+  { name: 'Email', href: 'mailto:best4liker@gmail.com', icon: Mail },
 ]
 
 export function Footer() {
@@ -39,14 +39,13 @@ export function Footer() {
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
             <Link href="/" className="flex items-center gap-2">
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-                <span className="text-lg font-bold text-primary-foreground">AI</span>
+                <span className="text-lg font-bold text-primary-foreground">ai</span>
               </div>
-              <span className="text-xl font-bold text-foreground">AILIQ</span>
+              <span className="text-xl font-bold text-foreground">ailiq</span>
             </Link>
 
             <p className="mt-4 text-sm text-muted-foreground">
-              Discover the best AI tools for your workflow with curated reviews,
-              comparisons, and practical guides.
+              Discover AI tools with curated reviews, comparisons, and practical guides.
             </p>
 
             <div className="mt-6 flex gap-4">
@@ -133,10 +132,11 @@ export function Footer() {
         <div className="mt-12 border-t border-border pt-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <p className="text-sm text-muted-foreground">
-              &copy; {new Date().getFullYear()} AILIQ. All rights reserved.
+              &copy; {new Date().getFullYear()} ailiq. All rights reserved.
             </p>
+
             <p className="text-sm text-muted-foreground">
-              Affiliate Disclosure: We may earn commissions from qualifying purchases.
+              We link to official tool websites whenever possible.
             </p>
           </div>
         </div>
