@@ -7,28 +7,44 @@ import { ComparisonProvider } from '@/lib/comparison-context'
 import { ComparisonBar } from '@/components/tools/comparison-bar'
 import './globals.css'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
-});
+})
 
-const jetbrainsMono = JetBrains_Mono({ 
+const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-mono',
   display: 'swap',
-});
+})
+
+const siteUrl = 'https://www.ailiq.xyz'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: 'AI ToolsHub - Discover the Best AI Tools',
-    template: '%s | AI ToolsHub',
+    default: 'AILIQ - Discover the Best AI Tools',
+    template: '%s | AILIQ',
   },
-  description: 'Comprehensive directory of AI tools with reviews, comparisons, and guides. Find the perfect AI tool for writing, image generation, video creation, and more.',
-  keywords: ['AI tools', 'artificial intelligence', 'ChatGPT', 'Midjourney', 'AI writing', 'AI image generator', 'AI video'],
-  authors: [{ name: 'AI ToolsHub' }],
-  creator: 'AI ToolsHub',
-  publisher: 'AI ToolsHub',
+  description:
+    'Discover, compare, and explore the best AI tools for writing, image generation, video creation, productivity, coding, and more.',
+  keywords: [
+    'AI tools',
+    'best AI tools',
+    'AI directory',
+    'AI writing tools',
+    'AI image generators',
+    'AI video tools',
+    'AI productivity tools',
+    'AI tool comparison',
+  ],
+  authors: [{ name: 'AILIQ' }],
+  creator: 'AILIQ',
+  publisher: 'AILIQ',
+  alternates: {
+    canonical: '/',
+  },
   robots: {
     index: true,
     follow: true,
@@ -43,15 +59,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://ailiq.xyz',
-    siteName: 'AI ToolsHub',
-    title: 'AI ToolsHub - Discover the Best AI Tools',
-    description: 'Comprehensive directory of AI tools with reviews, comparisons, and guides.',
+    url: siteUrl,
+    siteName: 'AILIQ',
+    title: 'AILIQ - Discover the Best AI Tools',
+    description:
+      'Discover, compare, and explore the best AI tools for writing, image generation, video creation, productivity, coding, and more.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI ToolsHub - Discover the Best AI Tools',
-    description: 'Comprehensive directory of AI tools with reviews, comparisons, and guides.',
+    title: 'AILIQ - Discover the Best AI Tools',
+    description:
+      'Discover, compare, and explore the best AI tools for writing, image generation, video creation, productivity, coding, and more.',
   },
   icons: {
     icon: [
@@ -85,7 +103,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} bg-background`}>
+    <html
+      lang="en"
+      dir="ltr"
+      className={`${inter.variable} ${jetbrainsMono.variable} bg-background`}
+    >
       <body className="font-sans antialiased">
         <ComparisonProvider>
           <Header />
