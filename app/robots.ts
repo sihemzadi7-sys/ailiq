@@ -1,21 +1,23 @@
 import type { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = 'https://www.ailiq.xyz'
+
   return {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
+        allow: ['/', '/_next/static/', '/_next/image/'],
         disallow: [
           '/api/',
           '/admin/',
           '/dashboard/',
           '/private/',
-          '/_next/',
+          '/_next/data/',
         ],
       },
     ],
-    sitemap: 'https://www.ailiq.xyz/sitemap.xml',
-    host: 'https://www.ailiq.xyz',
+    sitemap: `${baseUrl}/sitemap.xml`,
+    host: baseUrl,
   }
 }
