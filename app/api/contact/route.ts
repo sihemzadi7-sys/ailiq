@@ -5,6 +5,13 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: Request) {
   try {
+    if (!process.env.RESEND_API_KEY) {
+      return NextResponse.json(
+        { error: 'RESEND_API_KEY is missing.' },
+        { status: 500 }
+      )
+    }
+
     const body = await request.json()
     const { firstName, lastName, email, subject, message } = body
 
