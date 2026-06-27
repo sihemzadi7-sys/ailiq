@@ -13,7 +13,7 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json()
-    const { firstName, lastName, email, subject, message } = body
+    const { firstName, lastName, email, subject, message } = body || {}
 
     if (!firstName || !lastName || !email || !subject || !message) {
       return NextResponse.json(
@@ -34,7 +34,7 @@ export async function POST(request: Request) {
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Subject:</strong> ${subject}</p>
         <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br />')}</p>
+        <p>${String(message).replace(/\n/g, '<br />')}</p>
       `,
     })
 
