@@ -114,7 +114,7 @@ const faqs = [
       },
     ],
   },
-]
+] as const
 
 export default function FAQPage() {
   return (
@@ -137,7 +137,10 @@ export default function FAQPage() {
 
             <Accordion type="single" collapsible className="w-full">
               {section.questions.map((faq, index) => (
-                <AccordionItem key={index} value={`${section.category}-${index}`}>
+                <AccordionItem
+                  key={`${section.category}-${index}`}
+                  value={`${section.category}-${index}`}
+                >
                   <AccordionTrigger className="text-left text-foreground hover:text-primary">
                     {faq.question}
                   </AccordionTrigger>
