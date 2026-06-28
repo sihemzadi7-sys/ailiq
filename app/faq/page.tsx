@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { ChevronDown } from 'lucide-react';
-import {
+import { 
   Accordion,
   AccordionContent,
   AccordionItem,
