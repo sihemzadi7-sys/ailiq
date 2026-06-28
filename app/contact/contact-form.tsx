@@ -67,9 +67,12 @@ export function ContactForm() {
           <Label htmlFor="firstName">First name</Label>
           <Input
             id="firstName"
+            name="firstName"
             placeholder="John"
             value={form.firstName}
             onChange={(e) => setForm({ ...form, firstName: e.target.value })}
+            required
+            disabled={loading}
           />
         </div>
 
@@ -77,9 +80,12 @@ export function ContactForm() {
           <Label htmlFor="lastName">Last name</Label>
           <Input
             id="lastName"
+            name="lastName"
             placeholder="Doe"
             value={form.lastName}
             onChange={(e) => setForm({ ...form, lastName: e.target.value })}
+            required
+            disabled={loading}
           />
         </div>
       </div>
@@ -88,10 +94,13 @@ export function ContactForm() {
         <Label htmlFor="email">Email</Label>
         <Input
           id="email"
+          name="email"
           type="email"
           placeholder="john@example.com"
           value={form.email}
           onChange={(e) => setForm({ ...form, email: e.target.value })}
+          required
+          disabled={loading}
         />
       </div>
 
@@ -100,6 +109,7 @@ export function ContactForm() {
         <Select
           value={form.subject}
           onValueChange={(value) => setForm({ ...form, subject: value })}
+          disabled={loading}
         >
           <SelectTrigger>
             <SelectValue placeholder="Select a topic" />
@@ -120,10 +130,13 @@ export function ContactForm() {
         <Label htmlFor="message">Message</Label>
         <Textarea
           id="message"
+          name="message"
           placeholder="Tell us how we can help..."
           rows={5}
           value={form.message}
           onChange={(e) => setForm({ ...form, message: e.target.value })}
+          required
+          disabled={loading}
         />
       </div>
 
@@ -132,7 +145,9 @@ export function ContactForm() {
       </Button>
 
       {status && (
-        <p className="text-sm text-muted-foreground">{status}</p>
+        <p className="text-sm text-muted-foreground" aria-live="polite">
+          {status}
+        </p>
       )}
     </form>
   )
