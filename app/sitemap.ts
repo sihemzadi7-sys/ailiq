@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { getAllTools } from '@/lib/data/tools' // عدّل المسار حسب مكان الملف الحقيقي
+import { getAllTools } from '@/lib/data/tools' 
 
 const baseUrl = 'https://www.ailiq.xyz'
 
