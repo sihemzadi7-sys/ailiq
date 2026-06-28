@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Learn how ailiq collects, uses, and protects your personal information.',
+  description: 'Learn how AILIQ collects, uses, and protects your personal information.',
 }
 
 export default function PrivacyPage() {
@@ -20,7 +20,7 @@ export default function PrivacyPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground">Introduction</h2>
           <p className="mt-4 text-muted-foreground">
-            ailiq (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) respects your privacy and is committed to protecting
+            AILIQ (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) respects your privacy and is committed to protecting
             your personal data. This Privacy Policy explains how we collect, use, disclose, and
             safeguard information when you visit ailiq.xyz.
           </p>
