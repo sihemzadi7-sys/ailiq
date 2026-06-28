@@ -4,14 +4,14 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Learn more about ailiq, our editorial approach, how we review AI tools, and how we help users discover official tool websites.',
+    'Learn more about AILIQ, our editorial approach, how we review AI tools, and how we help users discover official tool websites.',
 }
 
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 lg:px-8 lg:py-16">
       <h1 className="mb-8 text-3xl font-bold text-foreground lg:text-4xl">
-        About ailiq
+        About AILIQ
       </h1>
 
       <p className="mb-8 text-muted-foreground">
@@ -22,7 +22,7 @@ export default function AboutPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground">Who We Are</h2>
           <p className="mt-4 text-muted-foreground">
-            ailiq is an independent website dedicated to discovering, organizing, and explaining AI tools
+            AILIQ is an independent website dedicated to discovering, organizing, and explaining AI tools
             for creators, marketers, developers, students, teams, and curious professionals.
           </p>
           <p className="mt-4 text-muted-foreground">
