@@ -4,7 +4,7 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
-      allow: '/',
+      allow: ['/', '/_next/static/', '/_next/image/'],
       disallow: ['/api/', '/admin/', '/dashboard/', '/private/', '/_next/data/'],
     },
     sitemap: 'https://www.ailiq.xyz/sitemap.xml',
